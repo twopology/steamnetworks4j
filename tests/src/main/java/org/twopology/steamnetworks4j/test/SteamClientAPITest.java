@@ -525,8 +525,7 @@ public class SteamClientAPITest extends SteamTestApp {
 					}
 				}
 			}
-		} else if (input.equals("stats request")) {
-			userStats.requestCurrentStats();
+
 		} else if (input.equals("stats store")) {
 			userStats.storeStats();
 		} else if (input.startsWith("achievement set ")) {

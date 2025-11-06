@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.twopology</groupId>
+	<artifactId>steamnetworks4j-parent</artifactId>
+	<version>0.0.1</version>
+
+	<packaging>pom</packaging>
+
+	<name>Steam Networks for Java - Parent POM</name>
+	<description>Modern Java wrapper for Steam API with networking support</description>
+	<url>https://github.com/twopology/steamnetworks4j</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Twopology</name>
+			<organization>Twopology</organization>
+			<organizationUrl>https://github.com/twopology</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/twopology/steamnetworks4j.git</connection>
+		<developerConnection>scm:git:https://github.com/twopology/steamnetworks4j.git</developerConnection>
+		<url>https://github.com/twopology/steamnetworks4j</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.release>21</maven.compiler.release>
+	</properties>
+
+	<modules>
+		<module>java-wrapper</module>
+		<module>jnigen</module>
+		<module>loader/gdx</module>
+		<module>loader/lwjgl3</module>
+		<module>server</module>
+		<module>tests</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.12.1</version>
+					<configuration>
+						<release>21</release>
+						<compilerArgs>
+							<arg>--enable-preview</arg>
+						</compilerArgs>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.3.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.3.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>3.6.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.2.5</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

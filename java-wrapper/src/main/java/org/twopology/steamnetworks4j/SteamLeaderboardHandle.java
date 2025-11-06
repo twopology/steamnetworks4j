@@ -1,0 +1,8 @@
+package org.twopology.steamnetworks4j;
+
+public class SteamLeaderboardHandle extends SteamNativeHandle {
+
+	SteamLeaderboardHandle(long handle) {
+		super(handle);
+	}
+}

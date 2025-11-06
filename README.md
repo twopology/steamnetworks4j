@@ -3,7 +3,7 @@
 A modern Java 21 wrapper for the Steam API with comprehensive networking support.
 
 [![Build Status](https://github.com/twopology/steamnetworks4j/workflows/Build%20and%20Test/badge.svg)](https://github.com/twopology/steamnetworks4j/actions)
-[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-0.0.1-blue)](https://github.com/twopology/steamnetworks4j/packages)
+[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-0.0.2-blue)](https://github.com/twopology/steamnetworks4j/packages)
 
 ## Features
 
@@ -21,7 +21,7 @@ A modern Java 21 wrapper for the Steam API with comprehensive networking support
 <dependency>
     <groupId>org.twopology</groupId>
     <artifactId>steamnetworks4j</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 

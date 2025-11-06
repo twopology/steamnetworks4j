@@ -6,7 +6,7 @@ This repository is configured to publish to GitHub Packages for easy distributio
 
 - **Group ID**: `org.twopology`
 - **Artifact ID**: `steamnetworks4j`
-- **Version**: `0.0.1`
+- **Version**: `0.0.2`
 - **GitHub Packages URL**: `https://maven.pkg.github.com/twopology/steamnetworks4j`
 
 ## Publishing
@@ -57,7 +57,7 @@ Add to your `pom.xml`:
 <dependency>
     <groupId>org.twopology</groupId>
     <artifactId>steamnetworks4j</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 

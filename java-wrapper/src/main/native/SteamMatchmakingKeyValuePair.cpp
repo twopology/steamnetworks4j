@@ -5,7 +5,7 @@ int convertKeyValuePairArray(
 	jobjectArray sourcePairs, int32 sourceSize,
 	MatchMakingKeyValuePair_t* targetPairs, int32 targetSize) {
 
-	jclass clazz = env->FindClass("org/twopology/steamnetworks/SteamMatchmakingKeyValuePair");
+	jclass clazz = env->FindClass("org/twopology/steamnetworks4j/SteamMatchmakingKeyValuePair");
 
 	int32 size = sourceSize < targetSize ? sourceSize : targetSize;
 

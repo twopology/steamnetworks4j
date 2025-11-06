@@ -14,7 +14,7 @@ void SteamMatchmakingPingResponse::ServerResponded(gameserveritem_t &server) {
 	invokeCallback({
 		jobject item = createGameServerItem(env, server);
 		callVoidMethod(env, "serverResponded",
-					   "(Lorg/twopology/steamnetworks/SteamMatchmakingGameServerItem;)V", item);
+					   "(Lorg/twopology/steamnetworks4j/SteamMatchmakingGameServerItem;)V", item);
 	});
 }
 

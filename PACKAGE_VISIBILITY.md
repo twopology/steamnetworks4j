@@ -39,7 +39,7 @@ Once packages are public, users can simply add:
 <dependency>
     <groupId>org.twopology</groupId>
     <artifactId>steamnetworks4j</artifactId>
-    <version>0.0.3</version>
+    <version>4</version>
 </dependency>
 ```
 
@@ -59,4 +59,4 @@ The current POM already has a `central` profile configured for this.
 
 ## Current Status
 
-After v0.0.3 is published, manually change the package visibility to public for the best user experience.
+After v0.0.4 is published, manually change the package visibility to public for the best user experience.

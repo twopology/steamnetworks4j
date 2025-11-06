@@ -47,7 +47,7 @@ void SteamCallbackAdapter::detachThread() const {
 
 void SteamCallbackAdapter::callVoidMethod(JNIEnv* env, const char* method, const char* signature, ...) const {
 	jclass clazz = env->GetObjectClass(m_callback);
-	jclass ex = env->FindClass("org/twopology/steamnetworks/SteamException");
+	jclass ex = env->FindClass("org/twopology/steamnetworks4j/SteamException");
 	if (clazz == 0) {
 	    env->ThrowNew(ex, "Couldn't retrieve class for callback object.");
 	} else {
@@ -73,7 +73,7 @@ void SteamCallbackAdapter::callVoidMethod(JNIEnv* env, const char* method, const
 
 void SteamCallbackAdapter::callStaticVoidMethod(JNIEnv* env, const char* method, const char* signature, ...) const {
 	jmethodID methodID = env->GetStaticMethodID(m_callbackClass, method, signature);
-	jclass ex = env->FindClass("org/twopology/steamnetworks/SteamException");
+	jclass ex = env->FindClass("org/twopology/steamnetworks4j/SteamException");
 	if (methodID == 0) {
 	    env->ThrowNew(ex, "Couldn't retrieve static callback method.");
 	} else {

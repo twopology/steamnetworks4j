@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.twopology</groupId>
 		<artifactId>steamnetworks4j-parent</artifactId>
-		<version>0.0.3</version>
+		<version>0.0.4</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 
@@ -17,7 +17,7 @@
 
 	<name>Steam API Java Wrapper - LWJGL3 library loader</name>
 	<description>Java wrapper to access the Steamworks API.</description>
-	<url>http://github.com/org/twopology/steamnetworks/steamnetworks4j</url>
+	<url>http://github.com/org/twopology/steamnetworks4j</url>
 
 	<issueManagement>
 		<url>http://github.com/twopology/steamnetworks4j/issues</url>
@@ -154,7 +154,7 @@
 		<dependency>
 			<groupId>org.twopology</groupId>
 			<artifactId>steamnetworks4j</artifactId>
-			<version>0.0.3</version>
+			<version>0.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.lwjgl</groupId>

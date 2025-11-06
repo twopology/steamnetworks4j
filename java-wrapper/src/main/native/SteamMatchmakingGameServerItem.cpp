@@ -1,11 +1,11 @@
 #include "SteamMatchmakingGameServerItem.h"
 
 void convertGameServerItem(jobject item, JNIEnv* env, const gameserveritem_t& server) {
-	jclass ex = env->FindClass("org/twopology/steamnetworks/SteamException");
-	jclass itemClazz = env->FindClass("org/twopology/steamnetworks/SteamMatchmakingGameServerItem");
+	jclass ex = env->FindClass("org/twopology/steamnetworks4j/SteamException");
+	jclass itemClazz = env->FindClass("org/twopology/steamnetworks4j/SteamMatchmakingGameServerItem");
 
-	jfieldID field = env->GetFieldID(itemClazz, "netAdr", "Lorg/twopology/steamnetworks/SteamMatchmakingServerNetAdr;");
-	jclass netAdrClazz = env->FindClass("org/twopology/steamnetworks/SteamMatchmakingServerNetAdr");
+	jfieldID field = env->GetFieldID(itemClazz, "netAdr", "Lorg/twopology/steamnetworks4j/SteamMatchmakingServerNetAdr;");
+	jclass netAdrClazz = env->FindClass("org/twopology/steamnetworks4j/SteamMatchmakingServerNetAdr");
 	jobject netAdr = env->GetObjectField(item, field);
 	if (netAdrClazz != nullptr && netAdr != nullptr) {
 		field = env->GetFieldID(netAdrClazz, "connectionPort", "S");
@@ -74,8 +74,8 @@ void convertGameServerItem(jobject item, JNIEnv* env, const gameserveritem_t& se
 
 jobject createGameServerItem(JNIEnv* env, const gameserveritem_t& server) {
 
-	jclass ex = env->FindClass("org/twopology/steamnetworks/SteamException");
-	jclass itemClazz = env->FindClass("org/twopology/steamnetworks/SteamMatchmakingGameServerItem");
+	jclass ex = env->FindClass("org/twopology/steamnetworks4j/SteamException");
+	jclass itemClazz = env->FindClass("org/twopology/steamnetworks4j/SteamMatchmakingGameServerItem");
 
 	if (itemClazz != nullptr) {
 		jmethodID itemCtor = env->GetMethodID(itemClazz, "<init>", "()V");

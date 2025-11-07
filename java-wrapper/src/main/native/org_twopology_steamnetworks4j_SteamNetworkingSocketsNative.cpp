@@ -1,4 +1,5 @@
 #include <org_twopology_steamnetworks4j_SteamNetworkingSocketsNative.h>
+#include <cstdio>
 
 //@line:9
 
@@ -133,14 +134,76 @@ JNIEXPORT jint JNICALL Java_org_twopology_steamnetworks4j_SteamNetworkingSockets
 
         for(int i = 0; i < num;i++){
             SteamNetworkingMessage_t* netMessage = ppOutMessages[i];
+            if (netMessage == NULL) {
+                fprintf(stderr, "[SteamNetworkingSocketsNative] ERROR: netMessage[%d] is NULL\n", i);
+                fflush(stderr);
+                continue;
+            }
 
             jobject message = env->GetObjectArrayElement(messageBuffer, i);
+            if (message == NULL) {
+                fprintf(stderr, "[SteamNetworkingSocketsNative] ERROR: GetObjectArrayElement returned NULL for index %d\n", i);
+                fflush(stderr);
+                netMessage->Release();
+                continue;
+            }
+            
+            fprintf(stderr, "[SteamNetworkingSocketsNative] Processing message %d, message object=%p\n", i, message);
+            fflush(stderr);
+            
+            // Check for exceptions before GetObjectClass
+            if (env->ExceptionCheck()) {
+                fprintf(stderr, "[SteamNetworkingSocketsNative] ERROR: Exception pending before GetObjectClass\n");
+                fflush(stderr);
+                env->ExceptionDescribe();
+                env->ExceptionClear();
+                env->DeleteLocalRef(message);
+                netMessage->Release();
+                continue;
+            }
+            
             jclass clazz = env->GetObjectClass(message);
+            
+            // Check for exceptions after GetObjectClass
+            if (env->ExceptionCheck()) {
+                fprintf(stderr, "[SteamNetworkingSocketsNative] ERROR: Exception occurred in GetObjectClass for message %d\n", i);
+                fflush(stderr);
+                env->ExceptionDescribe();
+                env->ExceptionClear();
+                env->DeleteLocalRef(message);
+                netMessage->Release();
+                continue;
+            }
+            
+            if (clazz == NULL || clazz == 0) {
+                fprintf(stderr, "[SteamNetworkingSocketsNative] ERROR: GetObjectClass returned NULL for message %d\n", i);
+                fflush(stderr);
+                env->DeleteLocalRef(message);
+                netMessage->Release();
+                continue;
+            }
 
             jfieldID payloadField = env->GetFieldID(clazz, "payload", "[B");
             jfieldID connectionField = env->GetFieldID(clazz, "connectionHandle", "I");
+            
+            if (payloadField == NULL || connectionField == NULL) {
+                fprintf(stderr, "[SteamNetworkingSocketsNative] ERROR: GetFieldID failed for message %d\n", i);
+                fflush(stderr);
+                env->DeleteLocalRef(clazz);
+                env->DeleteLocalRef(message);
+                netMessage->Release();
+                continue;
+            }
 
             jbyteArray javaByteArray = env->NewByteArray(netMessage->m_cbSize);
+            if (javaByteArray == NULL) {
+                fprintf(stderr, "[SteamNetworkingSocketsNative] ERROR: NewByteArray failed for message %d\n", i);
+                fflush(stderr);
+                env->DeleteLocalRef(clazz);
+                env->DeleteLocalRef(message);
+                netMessage->Release();
+                continue;
+            }
 
             env->SetByteArrayRegion(javaByteArray, 0, netMessage->m_cbSize, (const jbyte*) netMessage->m_pData);
 
@@ -148,6 +211,7 @@ JNIEXPORT jint JNICALL Java_org_twopology_steamnetworks4j_SteamNetworkingSockets
             env->SetObjectField(message, payloadField, javaByteArray);
 
             env->DeleteLocalRef(javaByteArray);
+            env->DeleteLocalRef(clazz);
             env->DeleteLocalRef(message);
 
             netMessage->Release();

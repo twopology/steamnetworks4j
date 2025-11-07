@@ -59,4 +59,4 @@ The current POM already has a `central` profile configured for this.
 
 ## Current Status
 
-After v0.0.9 is published, manually change the package visibility to public for the best user experience.
+After v0.0.10 is published, manually change the package visibility to public for the best user experience.

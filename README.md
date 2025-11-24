@@ -9,7 +9,7 @@ A modern Java 21 wrapper for the Steam API with comprehensive networking support
 
 - **Modern Java 21** - Built with the latest LTS Java version
 - **Steam Networking Sockets** - Full support for Steam's modern P2P networking API
-- **Cross-Platform** - Native libraries included for Windows, macOS, and Linux
+- **Cross-Platform** - Native libraries included for Windows, macOS, and Linux (I actually have not built for Windows or MacOS yet.  The pipeline is setup, but I need to actually test.  The macOS one will not be signed for now in any case)
 - **Zero Configuration** - Native libraries packaged in JAR for easy deployment
 - **GitHub Packages** - Easy distribution and consumption
 

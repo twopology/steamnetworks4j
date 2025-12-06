@@ -148,8 +148,9 @@ JNIEXPORT jint JNICALL Java_org_twopology_steamnetworks4j_SteamNetworkingSockets
                 continue;
             }
             
-            fprintf(stderr, "[SteamNetworkingSocketsNative] Processing message %d, message object=%p\n", i, message);
-            fflush(stderr);
+            // Debug logging removed - too verbose for production use
+            // fprintf(stderr, "[SteamNetworkingSocketsNative] Processing message %d, message object=%p\n", i, message);
+            // fflush(stderr);
             
             // Check for exceptions before GetObjectClass
             if (env->ExceptionCheck()) {

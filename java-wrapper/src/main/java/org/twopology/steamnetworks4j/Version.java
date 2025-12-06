@@ -2,7 +2,7 @@ package org.twopology.steamnetworks4j;
 
 public final class Version {
 
-	private static final String VERSION = "0.0.10";
+	private static final String VERSION = "0.0.12";
 
 	public static String getVersion() {
 		return VERSION;

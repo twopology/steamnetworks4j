@@ -1,7 +1,6 @@
 #include "SteamCallbackAdapter.h"
 #include <iostream>
 #include <cstdio>
-#include <pthread.h>
 
 SteamCallbackAdapter::SteamCallbackAdapter(JNIEnv* env, jobject callback) {
 	fprintf(stderr, "[SteamCallbackAdapter v2.0] Constructor called, callback=%p\n", callback);
@@ -64,8 +63,6 @@ void SteamCallbackAdapter::detachThread() const {
 }
 
 void SteamCallbackAdapter::callVoidMethod(JNIEnv* env, const char* method, const char* signature, ...) const {
-	pthread_t threadId = pthread_self();
-	
 	if (m_callback == NULL) {
 		fprintf(stderr, "[SteamCallbackAdapter] ERROR: m_callback is NULL\n");
 		fflush(stderr);

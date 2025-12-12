@@ -9,7 +9,7 @@
 
 ### ☕ Java Version Upgrade
 - **Old Version**: Java 8
-- **New Version**: Java 21 (Latest LTS)
+- **New Version**: Java 25 (Latest LTS)
 - **Benefits**: 
   - Modern JNI improvements
   - Better performance
@@ -23,7 +23,7 @@
 
 ### 🏗️ Build System Modernization
 - Updated to latest Maven plugin versions
-- Java 21 compiler configuration
+- Java 25 compiler configuration
 - Modern plugin management
 - Enhanced GitHub Actions workflows
 
@@ -52,7 +52,7 @@ steamnetworks4j/
 
 ## New Features Added
 
-🆕 **Modern Java Support** - Java 21 with latest JNI improvements
+🆕 **Modern Java Support** - Java 25 with latest JNI improvements
 🆕 **GitHub Packages** - Professional distribution
 🆕 **Enhanced Documentation** - Comprehensive guides and examples
 🆕 **CI/CD Pipeline** - Automated testing and publishing
@@ -61,7 +61,7 @@ steamnetworks4j/
 ## Breaking Changes
 
 ⚠️ **Not a Drop-in Replacement** - Package names changed
-⚠️ **Java 21 Required** - Minimum version increased
+⚠️ **Java 25 Required** - Minimum version increased
 ⚠️ **New Artifact Coordinates** - Maven dependencies must be updated
 
 ## Migration Guide
@@ -70,7 +70,7 @@ steamnetworks4j/
 
 1. **Update Java Version**
    ```bash
-   # Ensure Java 21+ is installed
+   # Ensure Java 25+ is installed
    java -version
    ```
 
@@ -112,7 +112,7 @@ steamnetworks4j/
 
 ## Build Verification
 
-✅ **Compilation**: All 93 Java files compile successfully with Java 21
+✅ **Compilation**: All 93 Java files compile successfully with Java 25
 ✅ **Packaging**: JAR includes all native libraries
 ✅ **Documentation**: Javadoc generation works without warnings
 ✅ **Testing**: Build pipeline configured and tested

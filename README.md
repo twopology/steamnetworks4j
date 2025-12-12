@@ -1,13 +1,13 @@
 # Steam Networks for Java
 
-A modern Java 21 wrapper for the Steam API with comprehensive networking support.
+A modern Java 25 wrapper for the Steam API with comprehensive networking support.
 
 [![Build Status](https://github.com/twopology/steamnetworks4j/workflows/Build%20and%20Test/badge.svg)](https://github.com/twopology/steamnetworks4j/actions)
-[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-0.0.13-SNAPSHOT-blue)](https://github.com/twopology/steamnetworks4j/packages)
+[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-0.0.14-SNAPSHOT-blue)](https://github.com/twopology/steamnetworks4j/packages)
 
 ## Features
 
-- **Modern Java 21** - Built with the latest LTS Java version
+- **Modern Java 25** - Built with the latest LTS Java version
 - **Steam Networking Sockets** - Full support for Steam's modern P2P networking API
 - **Cross-Platform** - Native libraries included for Windows, macOS, and Linux (I actually have not built for Windows or MacOS yet.  The pipeline is setup, but I need to actually test.  The macOS one will not be signed for now in any case)
 - **Zero Configuration** - Native libraries packaged in JAR for easy deployment
@@ -21,7 +21,7 @@ A modern Java 21 wrapper for the Steam API with comprehensive networking support
 <dependency>
     <groupId>org.twopology</groupId>
     <artifactId>steamnetworks4j</artifactId>
-    <version>0.0.13-SNAPSHOT</version>
+    <version>0.0.14-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -67,20 +67,20 @@ networking.sendMessageToConnection(connection, data,
 This is **not** a drop-in replacement for the original steamnetworks4j library:
 
 - **Package Name**: `org.twopology.steamnetworks4j` (not `com.codedisaster.steamworks`)
-- **Java Version**: Requires Java 21+ (not Java 8+)
+- **Java Version**: Requires Java 25+ (not Java 8+)
 - **Artifact Name**: `steamnetworks4j` (not `steamnetworks4j`)
 - **Focus**: Modern networking features with latest Java capabilities
 
 ## Requirements
 
-- **Java 21+** - Latest LTS version required
+- **Java 25+** - Latest LTS version required
 - **Steam Client** - Must be running for API access
 - **Steam Account** - Required for networking features
 
 ## Building
 
 ```bash
-# Build with Java 21
+# Build with Java 25
 mvn clean compile
 
 # Package with native libraries

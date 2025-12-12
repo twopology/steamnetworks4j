@@ -6,7 +6,7 @@ This repository is configured to publish to GitHub Packages for easy distributio
 
 - **Group ID**: `org.twopology`
 - **Artifact ID**: `steamnetworks4j`
-- **Version**: `0.0.13-SNAPSHOT`
+- **Version**: `0.0.14-SNAPSHOT`
 - **GitHub Packages URL**: `https://maven.pkg.github.com/twopology/steamnetworks4j`
 
 ## Publishing

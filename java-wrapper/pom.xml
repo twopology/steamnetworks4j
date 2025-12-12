@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.twopology</groupId>
 		<artifactId>steamnetworks4j-parent</artifactId>
-		<version>0.0.13-SNAPSHOT</version>
+		<version>0.0.14-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -151,7 +151,7 @@
 						</goals>
 						<configuration>
 							<doclint>none</doclint>
-							<source>21</source>
+							<source>25</source>
 						</configuration>
 					</execution>
 				</executions>

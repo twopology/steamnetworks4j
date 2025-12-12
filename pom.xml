@@ -6,7 +6,7 @@
 
 	<groupId>org.twopology</groupId>
 	<artifactId>steamnetworks4j-parent</artifactId>
-	<version>0.0.12</version>
+	<version>0.0.13-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
